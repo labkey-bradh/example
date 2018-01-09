@@ -37,7 +37,7 @@ public class exampleWebPart extends BodyWebPart<exampleWebPart.ElementCache>
 
     public exampleWebPart(WebDriver driver, int index)
     {
-        super(driver, "example", index);
+        super(driver, "My Interactive Web Part", index);
     }
 
     public exampleWebPart setInput(String value)

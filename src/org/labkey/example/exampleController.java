@@ -40,7 +40,21 @@ public class exampleController extends SpringActionController
     {
         public ModelAndView getView(Object o, BindException errors) throws Exception
         {
-            return new JspView("/org/labkey/example/view/hello.jsp");
+            return new JspView("/org/labkey/example/view/begin.jsp");
+        }
+
+        public NavTree appendNavTrail(NavTree root)
+        {
+            return root;
+        }
+    }
+
+    @RequiresPermission(ReadPermission.class)
+    public class ViewWebPartAction extends SimpleViewAction
+    {
+        public ModelAndView getView(Object o, BindException errors) throws Exception
+        {
+            return new JspView("/views/myWebPart.html");
         }
 
         public NavTree appendNavTrail(NavTree root)

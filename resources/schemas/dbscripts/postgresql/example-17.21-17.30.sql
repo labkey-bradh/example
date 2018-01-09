@@ -17,3 +17,23 @@
 -- Create schema, tables, indexes, and constraints used for example module here
 -- All SQL VIEW definitions should be created in example-create.sql and dropped in example-drop.sql
 CREATE SCHEMA example;
+
+CREATE TABLE example.member
+(
+  -- standard fields
+  _ts TIMESTAMP DEFAULT now(),
+  RowId SERIAL,
+  CreatedBy USERID,
+  Created TIMESTAMP,
+  ModifiedBy USERID,
+  Modified TIMESTAMP,
+  Owner USERID NULL,
+
+  -- other fields
+  Container ENTITYID NOT NULL,
+  FirstName VARCHAR(50) NOT NULL,
+  LastName VARCHAR(50) NOT NULL,
+  Age INT NULL,
+
+  CONSTRAINT PK_Member PRIMARY KEY (RowId)
+);

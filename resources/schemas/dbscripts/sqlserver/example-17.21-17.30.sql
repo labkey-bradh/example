@@ -18,3 +18,23 @@
 -- All SQL VIEW definitions should be created in example-create.sql and dropped in example-drop.sql
 CREATE SCHEMA example;
 GO
+
+CREATE TABLE example.Member
+(
+  -- standard fields
+  _ts TIMESTAMP,
+  RowId INT IDENTITY(1,1),
+  CreatedBy USERID,
+  Created DATETIME,
+  ModifiedBy USERID,
+  Modified DATETIME,
+  Owner USERID NULL,
+
+  -- other fields
+  Container ENTITYID NOT NULL,
+  FirstName NVARCHAR(50) NOT NULL,
+  LastName NVARCHAR(50) NOT NULL,
+  Age INT NULL,
+
+  CONSTRAINT PK_Member PRIMARY KEY (RowId)
+);
